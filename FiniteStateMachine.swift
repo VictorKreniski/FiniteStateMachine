@@ -11,8 +11,8 @@ import Foundation
 /**
  
  This class is a generic representation of finite state machine
- - Important: State hashable parameter MUST BE the Hashable with all the possible states (Examples: Idle, Jump )
- - Important: ActionTypes hashable parameter MUST BE the hashable with all the Action with minemonic names (Example: IdleToJump)
+ - Important: State hashable parameter must be the Hashable with all the possible states (Examples: Idle, Jump )
+ - Important: ActionTypes hashable parameter must be the hashable with all the Action with minemonic names (Example: IdleToJump)
  - Author: Victor Kreniski
  */
 public final class FiniteStateMachine<State: Hashable, ActionTypes: Hashable> {
@@ -20,7 +20,7 @@ public final class FiniteStateMachine<State: Hashable, ActionTypes: Hashable> {
     //MARK: - Properties
     // The actual state in some moment will be saved here
     public private(set) var currentState: State
-    // The array with all possibles actions
+    // The array with all possible actions
     private var actions = [State:[ActionTypes:State]]()
     
     //MARK: - Init
@@ -35,7 +35,7 @@ public final class FiniteStateMachine<State: Hashable, ActionTypes: Hashable> {
     
     //MARK: - Methods
     /**
-     addAction is a method able to add the possible action on the actions hash array
+     addAction is a method able to add the possible action on the action hash array
      - parameters:
         - action: Action hash object.
         - first: First State object
@@ -50,7 +50,7 @@ public final class FiniteStateMachine<State: Hashable, ActionTypes: Hashable> {
     }
     
     /**
-     This method returns a answer if the action can advance
+     This method returns an answer if the action can advance
      - parameters:
         - action: Action hash object.
      */
