@@ -1,23 +1,24 @@
 # Usefull Finite State Machine in Swift Language i've developed to help my iOS Game - [Chicken Sneakers](https://itunes.apple.com/br/app/chicken-sneakers/id1322624270?mt=8)
+### For more information, check out the [wiki](https://github.com/krevi27/FiniteStateMachine/wiki)
 
-## For more information, check out the [wiki](https://github.com/krevi27/FiniteStateMachine/wiki)
+# Implementing
+### First, [download](https://github.com/krevi27/FiniteStateMachine/blob/master/FiniteStateMachine.swift) the finite state machine file and add into your project
+### Declaring the Finite State Machine
 
-## Declaring the Finite State Machine into your project
-
-1. First you must create a **hashable object** with the possible states
+1. Create a **hashable object** with the possible states
 
 ```swift
 enum PlayerStates{
     case Idle, Jump, Duck, Dead
 }
 ```
-2. Second you must create a **hashable object** with all the possible actions in between states
+2. Create a **hashable object** with all the possible actions in between states
 ```swift
 enum PlayerActions{
     case IdleToJump, JumpToIdle, IdleToDuck, DuckToIdle, AliveToDead, DeadToIdle
 }
 ```
-3. Third you must **declare** your **finite state machine** as a **property** in the object, giving to the Finite State Machine both of the hashable objects in this order: States Hashable Object for the paramater ( State: Hashable ) and an Action Hashable Object for the parameter ( ActionTypes: Hashable )
+3. **Declare** your **finite state machine** as a **property** in the object, giving to the Finite State Machine both of the hashable objects in this order: States Hashable Object for the paramater ( State: Hashable ) and an Action Hashable Object for the parameter ( ActionTypes: Hashable )
 ```swift
 class Player {
     var finiteStateMachine: FiniteStateMachine<PlayerStates, PlayerActions>?
