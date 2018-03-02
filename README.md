@@ -2,7 +2,7 @@
 ### For more information, check out the [wiki](https://github.com/krevi27/FiniteStateMachine/wiki)
 
 # Implementation Guide
-### First, [download](https://github.com/krevi27/FiniteStateMachine/blob/master/FiniteStateMachine.swift) the finite state machine file and add into your project
+### First, [download](https://github.com/krevi27/FiniteStateMachine/blob/master/FiniteStateMachine.swift) the finite state machine file and add it into your project
 ### Declaring the Finite State Machine
 
 1. Create a **hashable object** with the possible states
@@ -18,7 +18,7 @@ enum PlayerActions{
     case IdleToJump, JumpToIdle, IdleToDuck, DuckToIdle, AliveToDead, DeadToIdle
 }
 ```
-3. **Declare** your **finite state machine** as a **property** in the object, giving to the Finite State Machine both of the hashable objects in this order: States Hashable Object for the paramater ( State: Hashable ) and an Action Hashable Object for the parameter ( ActionTypes: Hashable )
+3. **Declare** your **finite state machine** as a **property** in the object, giving to the Finite State Machine both of the hashable objects, in this order: States Hashable Object for the paramater ( State: Hashable ) and an Action Hashable Object for the parameter ( ActionTypes: Hashable )
 ```swift
 class Player {
     var finiteStateMachine: FiniteStateMachine<PlayerStates, PlayerActions>?
@@ -40,7 +40,7 @@ self.finiteStateMachine?.addAction(.DuckToIdle, from: .Duck, to: .Idle)
 ```
 ## How to operate the Finite State Machine
 ### You have three ways of operating the state machine
-1. Asking the finite state machine if a action is valid giving the actual state
+1. Asking the finite state machine if an action is valid giving the actual state
 2. Asking the finite state machine to execute an action. The action will only be executed if a action is valid
 3. Asking the finite state machine to execute an action with a completion. The action and the completion will only be executed if a action is valid
 
