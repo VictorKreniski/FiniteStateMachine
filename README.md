@@ -1,7 +1,7 @@
 # Usefull Finite State Machine in Swift Language i've developed to help my iOS Game - [Chicken Sneakers](https://itunes.apple.com/br/app/chicken-sneakers/id1322624270?mt=8)
 ### For more information, check out the [wiki](https://github.com/krevi27/FiniteStateMachine/wiki)
 
-# Implementing
+# Implementation Guide
 ### First, [download](https://github.com/krevi27/FiniteStateMachine/blob/master/FiniteStateMachine.swift) the finite state machine file and add into your project
 ### Declaring the Finite State Machine
 
