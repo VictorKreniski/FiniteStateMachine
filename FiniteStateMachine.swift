@@ -54,7 +54,7 @@ public final class FiniteStateMachine<State: Hashable, ActionTypes: Hashable> {
      - parameters:
         - action: Action hash object.
      */
-    public final func canAdvanceTo(action: ActionTypes) -> Bool {
+    public final func canExecute(action: ActionTypes) -> Bool {
         return actions[self.currentState]?[action] != nil
     }
     
@@ -68,7 +68,7 @@ public final class FiniteStateMachine<State: Hashable, ActionTypes: Hashable> {
         - completition: CompletionHandler
         - returns: State Object
      */
-    public final func advanceTo(action: ActionTypes, completion: CompletionHandler? = nil){
+    public final func execute(action: ActionTypes, completion: CompletionHandler? = nil){
         let previousState = self.currentState
         if let nextState = actions[previousState]?[action], nextState != previousState {
             self.currentState = nextState
