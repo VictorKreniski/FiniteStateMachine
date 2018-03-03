@@ -47,19 +47,19 @@ self.finiteStateMachine?.addAction(.DuckToIdle, from: .Duck, to: .Idle)
 ### Example
 * This code will ask the finite state machine if the action **.IdleToJump** is valid. The giving state in the object in this instant is .Idle, so the method will return **True**.
 ```swift
-player.finiteStateMachine?.canAdvanceTo(action: .IdleToJump)
+player.finiteStateMachine?.canExecute(action: .IdleToJump)
 ```
 * This code will ask the finite state machine again if the action **.JumpToIdle **is valid. Different from the other Action, this one is not valid, the finite state machine does not support the action **.JumpToIdle** if the actual state still **.Idle**
 ```swift
-player.finiteStateMachine?.canAdvanceTo(action: .JumpToIdle)
+player.finiteStateMachine?.canExecute(action: .JumpToIdle)
 ```
 * To make the action **.JumpToIdle** a valid one, first we must ask the finite state machine to execute the action **.IdleToJump**
 ```swift
-player.finiteStateMachine?.advanceTo(action: .IdleToJump)
+player.finiteStateMachine?.execute(action: .IdleToJump)
 ```
 * Now that we are in State **.Jump** we can ask the finite state machine, again, to execute another action **.JumpToIdle**. Now, we're using completion to print after the action is done, and the states are changed.
 ```swift
-player.finiteStateMachine?.advanceTo(action: .JumpToIdle, completion: { (old, new) in
+player.finiteStateMachine?.canExecute(action: .JumpToIdle, completion: { (old, new) in
     print("Coming from Idle and going to Duck")
 })
 ```
