@@ -15,7 +15,7 @@ enum PlayerStates{
 2. Create a **hashable object** with all the possible actions in between states
 ```swift
 enum PlayerActions{
-    case IdleToJump, JumpToIdle, IdleToDuck, DuckToIdle, AliveToDead, DeadToIdle
+    case IdleToJump, JumpToIdle, IdleToDuck, DuckToIdle, AliveToDead, DeadToIdle
 }
 ```
 3. **Declare** your **finite state machine** as a **property** in the object, giving to the Finite State Machine both of the hashable objects, in this order: States Hashable Object for the paramater ( State: Hashable ) and an Action Hashable Object for the parameter ( ActionTypes: Hashable )
@@ -45,11 +45,11 @@ self.finiteStateMachine?.addAction(.DuckToIdle, from: .Duck, to: .Idle)
 3. Asking the finite state machine to execute an action with a completion. The action and the completion will only be executed if an action is valid
 
 ### Example
-* This code will ask the finite state machine if the action **.IdleToJump** is valid. The giving state in the object in this instant is .Idle, so the method will return **True**.
+* This code will ask the finite state machine if the action **.IdleToJump** is valid. The giving state in the object in this instant is **.Idle**, so the method will return **True**.
 ```swift
 player.finiteStateMachine?.canExecute(action: .IdleToJump)
 ```
-* This code will ask the finite state machine again if the action **.JumpToIdle **is valid. Different from the other Action, this one is not valid, the finite state machine does not support the action **.JumpToIdle** if the actual state still **.Idle**
+* This code will ask the finite state machine again if the action **.JumpToIdle** is valid. Different from the other Action, this one is not valid, the finite state machine does not support the action **.JumpToIdle** if the actual state still **.Idle**
 ```swift
 player.finiteStateMachine?.canExecute(action: .JumpToIdle)
 ```
