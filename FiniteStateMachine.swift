@@ -1,6 +1,5 @@
 //
 //  FiniteStateMachine.swift
-//  TerceiroMiniChallenge
 //
 //  Created by Victor Oliveira Kreniski on 16/11/17.
 //  Copyright © 2017 Victor Oliveira Kreniski. All rights reserved.
