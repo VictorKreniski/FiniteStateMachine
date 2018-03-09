@@ -21,7 +21,7 @@ enum PlayerActions{
 3. **Declare** your **finite state machine** as a **property** in the object, giving to the Finite State Machine both of the hashable objects, in this order: States Hashable Object for the paramater ( State: Hashable ) and an Action Hashable Object for the parameter ( ActionTypes: Hashable )
 ```swift
 class Player {
-    var finiteStateMachine: VKFiniteStateMachine<PlayerStates, PlayerActions>?
+    var finiteStateMachine: FiniteStateMachine<PlayerStates, PlayerActions>?
 }
 ```
 ### Then you are good to **init** the Finite State Machine and **set** your initial State 
