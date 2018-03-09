@@ -49,7 +49,7 @@ public final class FiniteStateMachine<State: Hashable, ActionTypes: Hashable> {
     }
     
     /**
-     This method returns an answer if the action can advance
+     This method returns an answer if the action can be executed
      - parameters:
         - action: Action hash object.
      */
@@ -61,7 +61,7 @@ public final class FiniteStateMachine<State: Hashable, ActionTypes: Hashable> {
     // Simple typealias
     public typealias CompletionHandler = (_ old: State,_ new: State) -> ()
     /**
-     This method will make you advance into the next action, if possible.
+     This method will make you execute an action, if possible.
      - parameters:
         - action: Action hash object.
         - completition: CompletionHandler
