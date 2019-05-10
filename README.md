@@ -60,6 +60,6 @@ player.finiteStateMachine?.execute(action: .IdleToJump)
 * Now that we are in State **.Jump** we can ask the finite state machine, again, to execute another action **.JumpToIdle**. Now, we're using completion to print after the action is done, and the states are changed.
 ```swift
 player.finiteStateMachine?.canExecute(action: .JumpToIdle, completion: { (old, new) in
-    print("Coming from Idle and going to Duck")
+    print("Coming from Jump and going to Idle")
 })
 ```
